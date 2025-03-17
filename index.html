@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Detection</title>
+</head>
+<body>
+    <h1>Breast Cancer Detection</h1>
+    <form action="/predict" method="post">
+        <label for="mean_radius">Mean Radius:</label>
+        <input type="text" id="mean_radius" name="mean_radius" required><br><br>
+
+        <label for="mean_texture">Mean Texture:</label>
+        <input type="text" id="mean_texture" name="mean_texture" required><br><br>
+
+        <label for="mean_perimeter">Mean Perimeter:</label>
+        <input type="text" id="mean_perimeter" name="mean_perimeter" required><br><br>
+
+        <label for="mean_area">Mean Area:</label>
+        <input type="text" id="mean_area" name="mean_area" required><br><br>
+
+        <label for="mean_smoothness">Mean Smoothness:</label>
+        <input type="text" id="mean_smoothness" name="mean_smoothness" required><br><br>
+
+        <!-- Add other inputs for all the features the model uses -->
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+    
+</body>
+</html>
